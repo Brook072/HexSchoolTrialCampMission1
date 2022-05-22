@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* http://meyerweb.com/eric/tools/css/reset/ 
+        v2.0 | 20110126
+        License: none (public domain)
+        */
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        body {
+            line-height: 1;
+        }
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        /* CSS reset */
+
+        html, body{
+            font-family: "Ping Fang TC";
+        }
+
+        .container{
+            max-width: 940px;
+            margin: 30px auto;
+        }
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .logo_withText{
+            height: 40px;
+        }
+
+        .nav_item_wrapper{
+            display: flex;
+            align-items: center;
+        }
+
+        .nav_item{
+            color: #3F5D45;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0px 30px;
+        }
+        
+        .cart{
+            width: 24px;
+            height: 24px;
+            margin-left: 80px;
+        }
+
+        .banner{
+            width: 100%;
+            margin-bottom: 60px;
+        }
+
+        .context{
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 10px;
+        }
+
+        .category{
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+        }
+
+        .category > li{
+            font-size: 24px;
+            font-weight: 600;
+            padding: 16px 64px;
+            width: 172px;
+            text-align: center;
+        }
+
+        .category_title{
+            background-color: #3F5D45;
+            color:#EAF0ED;
+        }
+
+        .category_item{
+            color:#3F5D45;
+        }
+
+        .goods_list_wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .goods{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .goods_pic{
+            width: 100%;
+        }
+
+        .goods_tag, .goods_like{
+            position: absolute;
+        }
+
+        .goods_tag{
+            top: 0px;
+            left: 20px;
+            background-color: #3F5D45;
+            color: #EAF0ED;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+            width: 16px;
+            height: 87.4px;
+            padding: 10px 10.08px 10px 9.24px;
+        }
+
+        .goods_like{
+            width: 20px;
+            top: 19px;
+            right: 22px;
+        }
+
+        .goods_detail{
+            display: flex;
+        }
+
+        .detail_text, .detail_price{
+            border: 1px solid #EAF0ED;
+            font-size: 20px;
+            vertical-align: middle;
+            color: #3F5D45;
+            text-align: center;
+        }
+
+        .detail_text{
+            padding: 14px 33px;
+            width: 107px;
+        }
+
+        .detail_price{
+            padding: 14px 25px 15px 20px;
+            width: 82px;
+            font-weight: 600;
+        }
+
+        .add_cart_btn{
+            background-color: #EAF0ED;
+            padding: 16px 90px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #3F5D45;
+        }
+
+        .pagination_wrapper{
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 60px;
+        }
+
+        .pagination_wrapper > li{
+            border: 1px solid #EAF0ED;
+            width: 60px;
+            height: 60px;
+        }
+
+        .pagination_arw{
+            width: 24px;
+            padding: 18px;
+        }
+        
+        .pagination_text{
+            font-size: 20px;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        footer{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .describe_wrapper{
+            background-color: #3F5D45;
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 122px;
+        }
+
+        .logo_pic_only{
+            width: 40px;
+            margin-right: 20px;
+        }
+
+        .describe_text{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #EAF0ED;
+        }
+
+        .describe_input > form{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .describe_mail_input {
+            width: 316px;
+            height: 56px;
+        }
+
+        .mail{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 24px;
+        }
+
+        .send_mail{
+            background-color: #FFE180;
+            width: 16px;
+            height: 16px;
+            padding: 22px 24px;
+        }
+
+        .shop_info_wrapper{
+            display: flex;
+            flex-direction: column;
+            background-color: #EAF0ED;
+            padding: 30px 122px;
+        }
+
+        .shop_info{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .info_left{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .logo_text_only{
+            width: 171.22px;
+            margin-bottom: 115.5px;
+        }
+
+        .info_text{
+            margin-bottom: 30px;
+        }
+
+        .info_text > p{
+            color: #3F5D45;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+
+        .info_right{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slogan{
+            font-size: 22px;
+            color: #3F5D45;
+            writing-mode: vertical-rl;
+        }
+
+        .slogan_right{
+            width: 24px;
+            font-family: "Noto Serif TC";
+        }
+
+        .slogan_left{
+            width: 24px;
+            margin-top: 12px;
+            font-family: "Noto Serif TC";
+        }
+
+        .social_and_copyright{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .social_logo_wrapper{
+            display: flex;
+        }
+
+        .social_logo_wrapper > li > img{
+            width: 32px;
+        }
+
+        .line_icon{
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <img class="logo_withText" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/logo-all-dark.svg">
+            <ul class="nav_item_wrapper">
+                <li class="nav_item"><a>首頁</a></li>
+                <li class="nav_item"><a>甜點</a></li>
+                <li class="nav_item"><a>登入</a></li>
+                <li><img class="cart" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/shopping_cart.png?raw=true"></li>
+            </ul>
+        </nav>
+        <img class="banner" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/banner.png?raw=true">
+        <div class="context">
+            <ul class="category">
+                <li class="category_title"><p>甜點類別</p></li>
+                <li class="category_item" style="background-color:#EAF0ED"><p>所有甜點 (48)</p></li>
+                <li class="category_item"><p>本日精選 (10)</p></li>
+                <li class="category_item"><p>人氣推薦 (26)</p></li>
+                <li class="category_item"><p>新品上示 (12)</p></li>
+            </ul>
+            <ul class="goods_list_wrapper">
+                <li class="goods">
+                    <img class="goods_pic" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-1.png?raw=true">
+                    <p class="goods_tag">本日精選</p>
+                    <img class="goods_like" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/favorite_border.png?raw=true">
+                    <div class="goods_detail">
+                        <p class="detail_text">焦糖馬卡龍</p>
+                        <p class="detail_price">NT$450</p>
+                    </div>
+                    <p class="add_cart_btn">加入購物車</p>
+                </li>
+                <li class="goods">
+                    <img class="goods_pic" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-2.png?raw=true">
+                    <p class="goods_tag">本日精選</p>
+                    <img class="goods_like" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/favorite_border.png?raw=true">
+                    <div class="goods_detail">
+                        <p class="detail_text">焦糖馬卡龍</p>
+                        <p class="detail_price">NT$450</p>
+                    </div>
+                    <p class="add_cart_btn">加入購物車</p>
+                </li>
+                <li class="goods">
+                    <img class="goods_pic" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-3.png?raw=true">
+                    <p class="goods_tag">本日精選</p>
+                    <img class="goods_like" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/favorite_border.png?raw=true">
+                    <div class="goods_detail">
+                        <p class="detail_text">焦糖馬卡龍</p>
+                        <p class="detail_price">NT$450</p>
+                    </div>
+                    <p class="add_cart_btn">加入購物車</p>
+                </li>
+                <li class="goods">
+                    <img class="goods_pic" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-4.png?raw=true">
+                    <p class="goods_tag">本日精選</p>
+                    <img class="goods_like" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/favorite_border.png?raw=true">
+                    <div class="goods_detail">
+                        <p class="detail_text">焦糖馬卡龍</p>
+                        <p class="detail_price">NT$450</p>
+                    </div>
+                    <p class="add_cart_btn">加入購物車</p>
+                </li>
+                <li class="goods">
+                    <img class="goods_pic" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-5.png?raw=true">
+                    <p class="goods_tag">本日精選</p>
+                    <img class="goods_like" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/favorite_border.png?raw=true">
+                    <div class="goods_detail">
+                        <p class="detail_text">焦糖馬卡龍</p>
+                        <p class="detail_price">NT$450</p>
+                    </div>
+                    <p class="add_cart_btn">加入購物車</p>
+                </li>
+                <li class="goods">
+                    <img class="goods_pic" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-6.png?raw=true">
+                    <p class="goods_tag">本日精選</p>
+                    <img class="goods_like" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/favorite_border.png?raw=true">
+                    <div class="goods_detail">
+                        <p class="detail_text">焦糖馬卡龍</p>
+                        <p class="detail_price">NT$450</p>
+                    </div>
+                    <p class="add_cart_btn">加入購物車</p>
+                </li>
+            </ul>
+        </div>
+        <ul class="pagination_wrapper">
+            <li><img class="pagination_arw" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/arrow_left.png?raw=true"></li>
+            <li><p class="pagination_text" style="background-color:#3F5D45; color:#EAF0ED">1</p></li>
+            <li><p class="pagination_text">2</p></li>
+            <li><p class="pagination_text">3</p></li>
+            <li><img class="pagination_arw" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/arrow_right.png?raw=true"></li>
+        </ul>
+    </div>
+    <footer>
+        <div class="describe_wrapper">
+            <div class="describe_text">
+                <img class="logo_pic_only" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/logo-light.svg">
+                <p>訂閱你我的甜蜜郵件</p>
+            </div>
+            <div class="describe_input">
+                <form>
+                    <img class="mail" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/mail-24px.png?raw=true">
+                    <input class="describe_mail_input" type="text" name="mail">
+                    <img class="send_mail" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/arrow_forward-24px.png?raw=true">
+                </form>
+            </div>
+        </div>
+        <div class="shop_info_wrapper">
+            <div class="shop_info">
+                <div class="info_left">
+                    <img class="logo_text_only" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/logotype-sm-dark.svg">
+                    <div class="info_text">
+                        <p>07-1234-5678</p>
+                        <p>sweetaste@email.com</p>
+                        <p class="address">800 高雄市新興區幸福路520號</p>
+                    </div>
+                </div>
+                <div class="info_right">
+                    <div class="slogan">
+                        <p class="slogan_right">今天是個&mdash;&mdash;</p>
+                        <p class="slogan_left">吃點心的好日子</p>
+                    </div>
+                </div>
+            </div>
+            <div class="social_and_copyright">
+                <ul class="social_logo_wrapper">
+                    <li><img class="line_icon" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/ic-line%40.svg"></li>
+                    <li><img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/ic-facebook.svg"></li>
+                </ul>
+                <p>&#169 2018 Sweetaste* All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
