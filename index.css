@@ -1,0 +1,391 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* CSS reset */
+
+html, body{
+    font-family: "Ping Fang TC";
+}
+
+a {
+    text-decoration: none;
+    color: #3F5D45;
+}
+
+.container{
+    max-width: 940px;
+    margin: 30px auto;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.logo_withText{
+    height: 40px;
+}
+
+.nav_item_wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.nav_item{
+    color: #3F5D45;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px 30px;
+}
+
+.nav_item > a:hover{
+    animation-name: navHover;
+    animation-duration: 1s;
+}
+
+@keyframes navHover{
+    from{
+        color: #3F5D45;
+    }
+    to{
+        color: #EAF0ED;
+    }
+}
+
+.cart{
+    width: 24px;
+    height: 24px;
+}
+
+.banner{
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.context{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.category{
+    margin-right: 20px;
+}
+
+.category_list > li >a, .category_title{
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 16px 64px;
+    width: 172px;
+    text-align: center;
+}
+
+.category_title{
+    background-color: #3F5D45;
+    color:#EAF0ED;
+}
+
+.category_item{
+    color:#3F5D45;
+}
+
+.category_item:hover{
+    background-color: #EAF0ED;
+}
+
+.goods_list_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.goods{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.goods_pic{
+    width: 100%;
+}
+
+.goods_tag, .goods_like{
+    position: absolute;
+}
+
+.goods_tag{
+    top: 0px;
+    left: 20px;
+    background-color: #3F5D45;
+    color: #EAF0ED;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    width: 16px;
+    height: 87.4px;
+    padding: 10px 10.08px 10px 9.24px;
+}
+
+.goods_like{
+    width: 20px;
+    top: 19px;
+    right: 22px;
+}
+
+.goods_detail{
+    display: flex;
+}
+
+.detail_text, .detail_price{
+    border: 1px solid #EAF0ED;
+    font-size: 20px;
+    vertical-align: middle;
+    color: #3F5D45;
+    text-align: center;
+}
+
+.detail_text{
+    padding: 14px 33px;
+    width: 107px;
+}
+
+.detail_price{
+    padding: 14px 25px 15px 20px;
+    width: 82px;
+    font-weight: 600;
+}
+
+.add_cart_btn{
+    background-color: #EAF0ED;
+    padding: 16px 90px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #3F5D45;
+}
+
+.add_cart_btn:hover{
+    color:#EAF0ED;
+    background-color: #3F5D45;
+}
+
+.pagination_wrapper{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 60px;
+}
+
+.pagination_wrapper > li{
+    border: 1px solid #EAF0ED;
+    width: 60px;
+    height: 60px;
+}
+
+.pagination_arw{
+    width: 24px;
+    padding: 18px;
+}
+
+.pagination_arw:hover{
+    animation-name: paginationArwHover;
+    animation-duration: 0.5s;
+}
+
+@keyframes paginationArwHover{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.pagination_text{
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    line-height: 60px;
+}
+
+.pagination_text:visited{
+    color: #3F5D45;
+}
+
+.pagination_text:hover{
+    color: #EAF0ED;
+    background-color: #3F5D45;
+}
+
+footer{
+    width: 100%;
+}
+
+.describe_wrapper{
+    background-color: #3F5D45;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 122px;
+}
+
+.logo_pic_only{
+    width: 40px;
+    margin-right: 20px;
+}
+
+.describe_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #EAF0ED;
+}
+
+.describe_input > form{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.describe_mail_input {
+    width: 316px;
+    height: 56px;
+}
+
+.mail{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 24px;
+}
+
+.send_mail{
+    background-color: #FFE180;
+    width: 16px;
+    height: 16px;
+    padding: 22px 24px;
+}
+
+.shop_info_wrapper{
+    background-color: #EAF0ED;
+    padding: 30px 122px;
+}
+
+.shop_info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.info_left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo_text_only{
+    width: 171.22px;
+    margin-bottom: 115.5px;
+}
+
+.info_text{
+    margin-bottom: 30px;
+}
+
+.info_text > p, .info_text > a{
+    color: #3F5D45;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.info_text > a{
+    display: block;
+}
+
+
+.info_right{
+    display: flex;
+    flex-direction: column;
+}
+
+.slogan{
+    font-size: 22px;
+    color: #3F5D45;
+    writing-mode: vertical-rl;
+}
+
+.slogan_right{
+    width: 24px;
+    font-family: "Noto Serif TC";
+}
+
+.slogan_left{
+    width: 24px;
+    margin-top: 12px;
+    font-family: "Noto Serif TC";
+}
+
+.social_and_copyright{
+    display: flex;
+    justify-content: space-between;
+}
+
+.social_logo_wrapper{
+    display: flex;
+}
+
+.social_logo_wrapper > li > img{
+    width: 32px;
+}
+
+.line_icon{
+    margin-right: 8px;
+}
